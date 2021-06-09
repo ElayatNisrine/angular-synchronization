@@ -7,6 +7,12 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class allEmployeeService {
+export class EmployeeService {
   constructor(private httpClient: HttpClient) {}
+  getEmployees() {
+    return this.httpClient.get(
+      'https://jsonplaceholder.typicode.com/users',
+      httpOptions
+    );
+  }
 }
